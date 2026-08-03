@@ -4,7 +4,7 @@
 
 To install / setup your environment to run the code for this project we need to
 
-* [Download the data](https://github.com/alvarovm/solarcelldata/wiki/Getting-Started#download-the-data)
+* [Download the data](https://github.com/alvarovm/GraphNetwork-Redox/)
 * Install the DyeDB python package which we describe below.
 
 ### Clone the repo
@@ -13,30 +13,30 @@ To install / setup your environment to run the code for this project we need to
 
 In Jypyter-lab, open a  new Terminal and run:
 ```
-git config --global --add safe.directory /global/cfs/cdirs/m4388/Project7/solarcelldata/.git
-git clone /global/cfs/cdirs/m4388/Project7/solarcelldata
-cd ./solarcelldata
+git config --global --add safe.directory /global/cfs/cdirs/m4388/Project7/GraphNetwork-Redox/.git
+git clone /global/cfs/cdirs/m4388/Project7/GraphNetwork-Redox
+cd ./gnnrepo
 ```
 
 
 2. Create a virtual environment with [conda](anaconda.com)
 ```
 module add python
-conda activate /global/common/software/m4388/solarcelldata/
+conda activate /global/common/software/m4388/GraphNetwork-Redox/
 ```
 
 
 
 #### Outside NERSC
-1. Clone the [Githhub repo](https://github.com/alvarovm/solarcelldata)
+1. Clone the [Githhub repo](https://github.com/alvarovm/GraphNetwork-Redox)
 ```
-git clone https://github.com/alvarovm/solarcelldata.git
-cd ./solarcelldata
+git clone https://github.com/alvarovm/GraphNetwork-Redox.git
+cd ./gnnrepo
 ```
 2. Create a virtual environment with [conda](anaconda.com)
 ```
 conda create -f environment.yml
-conda activate solarcelldata
+conda activate GraphNetwork-Redox
 ```
 
 ## Working with Jupyter server at NERSC, August 2025
