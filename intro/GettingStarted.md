@@ -5,7 +5,6 @@
 To install / setup your environment to run the code for this project we need to
 
 * [Download the data](https://github.com/alvarovm/GraphNetwork-Redox/)
-* Install the DyeDB python package which we describe below.
 
 ### Clone the repo
 ### In NERSC computers
