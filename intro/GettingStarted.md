@@ -36,7 +36,7 @@ cd ./GraphNetwork-Redox
 source /global/common/software/m4388/GNNredox/bin/activate
 ```
 
-## Working with Jupyter server at NERSC, August 2025
+## Working with Jupyter server at NERSC, August 2026
 
 For this project we will use [Jupyter notebooks](https://jupyter.readthedocs.io/en/latest/).
  
