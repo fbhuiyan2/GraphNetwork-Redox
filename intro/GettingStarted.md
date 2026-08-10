@@ -5,41 +5,38 @@
 To install / setup your environment to run the code for this project we need to
 
 * [Download the data](https://github.com/alvarovm/GraphNetwork-Redox/)
-* Install the DyeDB python package which we describe below.
 
 ### Clone the repo
 ### In NERSC computers
-1. Clone the [Githhub repo](https://github.com/alvarovm/solarcelldata)
+1. Clone the [Githhub repo]([https://github.com/alvarovm/solarcelldata](https://github.com/alvarovm/GraphNetwork-Redox))
 
 In Jypyter-lab, open a  new Terminal and run:
 ```
-git config --global --add safe.directory /global/cfs/cdirs/m4388/Project7/GraphNetwork-Redox/.git
-git clone /global/cfs/cdirs/m4388/Project7/GraphNetwork-Redox
-cd ./gnnrepo
+git config --global --add safe.directory /global/cfs/cdirs/m4388/projects/project3/GraphNetwork-Redox.git
+git clone /global/cfs/cdirs/m4388/projects/project3/GraphNetwork-Redox
+cd ./GraphNetwork-Redox
 ```
 
 
 2. Create a virtual environment with [conda](anaconda.com)
 ```
-module add python
-conda activate /global/common/software/m4388/GraphNetwork-Redox/
+source /global/common/software/m4388/GNNredox/bin/activate
 ```
 
 
 
 #### Outside NERSC
-1. Clone the [Githhub repo](https://github.com/alvarovm/GraphNetwork-Redox)
+1. Clone the [[Githhub repo](https://github.com/alvarovm/GraphNetwork-Redox](https://github.com/alvarovm/GraphNetwork-Redox)
 ```
 git clone https://github.com/alvarovm/GraphNetwork-Redox.git
-cd ./gnnrepo
+cd ./GraphNetwork-Redox
 ```
 2. Create a virtual environment with [conda](anaconda.com)
 ```
-conda create -f environment.yml
-conda activate GraphNetwork-Redox
+source /global/common/software/m4388/GNNredox/bin/activate
 ```
 
-## Working with Jupyter server at NERSC, August 2025
+## Working with Jupyter server at NERSC, August 2026
 
 For this project we will use [Jupyter notebooks](https://jupyter.readthedocs.io/en/latest/).
  
@@ -47,11 +44,12 @@ The documentation for using Jupyter at NERSC could found here [https://docs.ners
 
 Here is a link to NERSC's JupyterHub service: [https://jupyter.nersc.gov/hub/home](https://jupyter.nersc.gov/hub/home)
 
-During the IntroToHPC2025 bootcamp we have scheduled reservations for all the attendees during the following hours:
-* Mon. 20 GPU nodes, 2:30 pm - 5:30 pm, reservation name: intro_hpc_day1
-* Tue, 40 GPU nodes, 3:00 pm - 5:30 pm,  reservation name: intro_hpc_day2_pm
-* Wed, 40 GPU nodes, 9:00 am - 5:30 pm,  reservation name: intro_hpc_day2_pm
-* Thur, 40 GPU nodes, 12:00 pm - 8:30 pm,  reservation name: intro_hpc_day4 
+During the **intro-hpc-bootcamp bootcamp** we have scheduled reservations for all the attendees during the following hours:
+ReservationName=bootcamp_day1 11:00am - 10pm, 20 nodes
+ReservationName=bootcamp_day2 11:00am - 10pm, 30 nodes
+ReservationName=bootcamp_day3 11:00am - 10pm, 30 nodes
+ReservationName=bootcamp_day4 8:00am - Midnight, 40 nodes
+ReservationName=bootcamp_day5 8am - 11am, 30 nodes
 
 Each GPU node has 64 CPU cores (with 2 hyperthreads per physical core, so Slurm sees it as having 128 logical cores, or Slurm says it has 128 CPUs,) and 4 GPUs. The GPU nodes are shareable. 
 
@@ -67,9 +65,9 @@ For this project each student can request 1/4 of a GPU node, having access to 32
 
 Once you opened a jupyter server, then you can open a terminal to modify your files, or browse your files (left menu) and open jupyter notebooks  (files ending with the extension .ipynb).
 
-We have prepared a specific kernel for the materials of this project. The kernel selections is found in the upper right corner of the notebook, and it will look like (select **solarcelldata**):
+We have prepared a specific kernel for the materials of this project. The kernel selections is found in the upper right corner of the notebook, and it will look like (select **GNNredox**):
 
-![](https://github.com/alvarovm/solarcelldata/blob/cf6a2df7c123875713066bdbe391c6dc58a9ee4b/figures/kernel.png)
+![](https://raw.githubusercontent.com/alvarovm/solarcelldata/main/figures/kernelgnn.png)
 
 Tutorial video:
 
@@ -91,6 +89,7 @@ You could find an example [here](https://github.com/mcs07/ChemDataExtractor/blob
 
 ### Installation of chemdataextractor (optional)
 ```
+module add python
 conda create -n chemdata python==3.8 pip
 conda activate chemdata
 pip install chemdataextractor
