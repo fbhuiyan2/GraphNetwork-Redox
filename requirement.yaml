@@ -2,43 +2,23 @@
 #
 # Reproducible environment for the Fe-Redox GNN bootcamp curriculum (GNNrepo/notebooks)
 # and the production repository (gnnredox/, upstream https://github.com/alvarovm/Fe-Redox-GNN).
-#
-# This file describes the `mygnn` environment as verified locally:
-#   Python 3.12, CPU-only PyTorch. Versions are pinned to what was installed and
-#   smoke-tested (import checks + a GCNConv forward pass). `pip check` passes.
-#
-# --- Create / recreate -------------------------------------------------------
-#   conda env create -f requirement.yaml -p ./mygnn
-#   # or, for the existing venv, install the pip section with:
-#   #   ./mygnn/bin/python -m pip install <packages>
-#   python -m ipykernel install --user --name=mygnn --display-name "mygnn (Python 3.12)"
-#
-# --- GPU / HPC note ----------------------------------------------------------
-# CPU wheels are used here (no local CUDA). On a CUDA node (e.g. NERSC Perlmutter,
-# ALCF Polaris/Sophia) install the GPU build the production repo targets instead of
-# the torch lines below:
-#   pip install torch==2.6.0+cu124 torchvision==0.21.0+cu124 torchaudio==2.6.0+cu124 \
-#       --extra-index-url https://download.pytorch.org/whl/cu124
-#   pip install torch-geometric==2.6.1
-#   pip install pyg_lib torch_scatter torch_sparse torch_cluster \
-#       -f https://data.pyg.org/whl/torch-2.6.0+cu124.html
-# The compiled PyG extensions (pyg_lib/torch_scatter/torch_sparse/torch_cluster) are
-# optional for the curriculum: torch_geometric>=2.x runs the notebooks' GCNConv /
-# pooling ops with pure-Python fallbacks when they are absent, as verified locally.
 
 name: mygnn
+
 channels:
   - conda-forge
+
 dependencies:
-  - python=3.12
+  - python=3.12.12
   - pip
   - pip:
-      # --- Deep learning / GNN (CPU wheels) ---
-      - --index-url https://download.pytorch.org/whl/cpu
+      # --- Deep learning / GNN (CUDA 13.0 wheels) ---
+      - --index-url https://download.pytorch.org/whl/cu130
+      - --extra-index-url https://pypi.org/simple
+      - --find-links https://data.pyg.org/whl/torch-2.13.0+cu130.html
       - torch==2.13.0
       - torchvision==0.28.0
       - torchaudio==2.11.0
-      - --extra-index-url https://pypi.org/simple
       - torch-geometric==2.8.0.post1
       - networkx==3.6.1
 
