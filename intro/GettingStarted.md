@@ -45,10 +45,11 @@ The documentation for using Jupyter at NERSC could found here [https://docs.ners
 Here is a link to NERSC's JupyterHub service: [https://jupyter.nersc.gov/hub/home](https://jupyter.nersc.gov/hub/home)
 
 During the **intro-hpc-bootcamp bootcamp** we have scheduled reservations for all the attendees during the following hours:
-* Mon. 20 GPU nodes, 2:30 pm - 5:30 pm, reservation name: intro_hpc_day1
-* Tue, 40 GPU nodes, 3:00 pm - 5:30 pm,  reservation name: intro_hpc_day2_pm
-* Wed, 40 GPU nodes, 9:00 am - 5:30 pm,  reservation name: intro_hpc_day2_pm
-* Thur, 40 GPU nodes, 12:00 pm - 8:30 pm,  reservation name: intro_hpc_day4 
+ReservationName=bootcamp_day1 11:00am - 10pm, 20 nodes
+ReservationName=bootcamp_day2 11:00am - 10pm, 30 nodes
+ReservationName=bootcamp_day3 11:00am - 10pm, 30 nodes
+ReservationName=bootcamp_day4 8:00am - Midnight, 40 nodes
+ReservationName=bootcamp_day5 8am - 11am, 30 nodes
 
 Each GPU node has 64 CPU cores (with 2 hyperthreads per physical core, so Slurm sees it as having 128 logical cores, or Slurm says it has 128 CPUs,) and 4 GPUs. The GPU nodes are shareable. 
 
